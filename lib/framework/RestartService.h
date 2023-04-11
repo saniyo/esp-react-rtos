@@ -20,7 +20,8 @@ class RestartService {
 
   static void restartNow() {
     WiFi.disconnect(true);
-    delay(500);
+    // delay(500);
+    vTaskDelay(500 / portTICK_PERIOD_MS);
     ESP.restart();
   }
 
